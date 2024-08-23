@@ -22,16 +22,19 @@ class HomeFragment extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildCard(
-                        context, '128', 'Reports', 'assets/images/reports.png'),
-                    _buildCard(context, '14', 'Track Student',
-                        'assets/images/track.png'),
-                    _buildCard(
-                        context, '145', 'SOS Alerts', 'assets/images/sos.png'),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _buildCard(context, '128', 'Reports',
+                          'assets/images/reports.png'),
+                      _buildCard(context, '10', 'Track Student',
+                          'assets/images/track.png'),
+                      _buildCard(context, '145', 'SOS Alerts',
+                          'assets/images/sos.png'),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20),
                 _buildPerformanceChart(),
@@ -104,12 +107,12 @@ class HomeFragment extends StatelessWidget {
             child: Text(
               label,
               style: const TextStyle(
-                fontSize: 14,
+                fontSize: 10,
                 color: Colors.black,
               ),
             ),
           ),
-          const SizedBox(height: 14.0),
+          const SizedBox(height: 10.0),
           InkWell(
             onTap: () {
               // onTap functionality here
@@ -197,10 +200,11 @@ extension DecorateContainer on Widget {
       color: Colors.white,
       elevation: 2,
       child: Container(
-        color: Colors.white,
-        // padding: const EdgeInsets.all(0),
-        // margin: const EdgeInsets.all(8),
-        height: 400,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.white,
+        ),
+        padding: const EdgeInsets.all(12),
         width: double.infinity,
         child: Column(
           children: [
@@ -223,12 +227,12 @@ extension DecorateContainer on Widget {
                       Row(
                         children: [
                           Container(
-                            width: 14,
-                            height: 14,
+                            width: 10,
+                            height: 10,
                             decoration: const BoxDecoration(
                                 color: Colors.red,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(5))),
+                                    BorderRadius.all(Radius.circular(3))),
                           ),
                           const SizedBox(width: 3),
                           const Text('SOS Alerts')
@@ -240,12 +244,12 @@ extension DecorateContainer on Widget {
                       Row(
                         children: [
                           Container(
-                            width: 14,
-                            height: 14,
+                            width: 10,
+                            height: 10,
                             decoration: const BoxDecoration(
                                 color: Colors.blue,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(5))),
+                                    BorderRadius.all(Radius.circular(3))),
                           ),
                           const SizedBox(width: 3),
                           const Text('Reports')
@@ -257,12 +261,12 @@ extension DecorateContainer on Widget {
                       Row(
                         children: [
                           Container(
-                            width: 14,
-                            height: 14,
+                            width: 10,
+                            height: 10,
                             decoration: const BoxDecoration(
                                 color: Colors.yellow,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(5))),
+                                    BorderRadius.all(Radius.circular(3))),
                           ),
                           const SizedBox(width: 3),
                           const Text('Student Population')
@@ -343,7 +347,10 @@ extension DecorateContainer on Widget {
           children: [
             const Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text('Active SOS Alerts'),
+              child: Text(
+                'Active SOS Alerts',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             Row(
               children: [

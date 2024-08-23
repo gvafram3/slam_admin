@@ -73,7 +73,6 @@ class _TrackStudentsFragmentState extends State<TrackStudentsFragment> {
   }
 
   Widget _buildStudentsOnlineCard() {
-    // final size = MediaQuery.of(context).size;
     return Card(
       elevation: 2,
       child: Row(
@@ -86,15 +85,11 @@ class _TrackStudentsFragmentState extends State<TrackStudentsFragment> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
                 ),
-
-                // width: double.infinity,
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      textAlign: TextAlign.start,
                       'Students online for tracking',
                       style: TextStyle(
                         fontSize: 14,
@@ -123,9 +118,6 @@ class _TrackStudentsFragmentState extends State<TrackStudentsFragment> {
                                 'John Doe', 'BSc. Computer Science', true),
                           ],
                         ),
-                        // const SizedBox(
-                        //   width: 32,
-                        // ),
                         Column(
                           children: [
                             _buildStudentStatus(
@@ -151,6 +143,7 @@ class _TrackStudentsFragmentState extends State<TrackStudentsFragment> {
               ),
             ),
           ),
+          // Spacer to create space between online and offline students
           const SizedBox(width: 32),
           Expanded(
             flex: 1,
@@ -159,8 +152,6 @@ class _TrackStudentsFragmentState extends State<TrackStudentsFragment> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
               ),
-
-              // width: double.infinity,
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
